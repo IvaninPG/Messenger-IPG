@@ -8,4 +8,10 @@ class Member(models.Model):
     avatarMember = models.ImageField()
 
 class Room(models.Model):
+    memberRoom = models.ForeignKey(Member, on_delete=models.CASCADE)
+    nameRoom = models.CharField(max_length=128)
+    textRoom = models.TextField()
+    dateCreation = models.DateTimeField(auto_now_add=True)
+
+
 
